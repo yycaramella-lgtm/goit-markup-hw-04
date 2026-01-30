@@ -10,7 +10,13 @@ body {
     background-color: #ffffff;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
 }
 
@@ -68,6 +74,7 @@ img {
 /* region header */
 .page-header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -112,10 +119,27 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #2e2f42;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-list-item-link.current a {
+    position: relative;
+}
+
+.nav-list-item-link.current a::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
 }
 
 .nav-list a:hover,
-.nav-list a:focus {
+.nav-list a:focus, 
+.nav-list-item-link.current a {
     color: #404bbf;
 }
 
@@ -136,6 +160,7 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-list a:hover,
@@ -150,6 +175,19 @@ img {
     background-color: #2e2f42;
     padding: 188px 0;
     text-align: center;
+    
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+        ),
+        url("../images/people-office.jpg")
+;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        max-width: 1440px;
+    margin: 0 auto;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .hero-container {
@@ -178,6 +216,7 @@ img {
     line-height: 1.5;
     letter-spacing: 0.04em;
     cursor: pointer;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -195,6 +234,10 @@ img {
 
 .features-item {
     width: calc((100% - 72px) / 4);
+}
+
+img{
+    display: flex;;
 }
 
 .features-title {
@@ -227,7 +270,7 @@ img {
 
 .team-item {
     width: calc((100% - 72px) / 4);
-    background-color: #ffffff; 
+    background-color: #ffffff;
     border-radius: 0 0 4px 4px;
     text-align: center;
 }
@@ -305,7 +348,7 @@ img {
 }
 
 .footer-logo {
-   color: #f4f4fd;
+    color: #f4f4fd;
 }
 
 .footer-logo .accent {
